@@ -44,4 +44,10 @@ public class UserServiceImpl implements UserService {
 		return users;
 	}
 
+	@Override
+	public void deleteUser(Integer userId) {
+		this.userRepository.deleteById(userId);
+		
+	}
+
 }

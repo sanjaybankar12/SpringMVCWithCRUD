@@ -50,7 +50,7 @@ table tr:nth-child(even) {
 					<td><c:out value="${user.id}"></c:out></td>
 					<td><c:out value="${user.name}"></c:out></td>
 					<td><c:out value="${user.gender}"></c:out></td>
-					<td style="text-align:center !important;"><form><input type="text" value="${user.id}" /></form><button class="btn btn-sm btn-danger" type="button">Remove</button></td>
+					<td style="text-align:center !important;"><form method="post" action="/user/delete"><input type="hidden" name="userId" value="${user.id}" /><button class="btn btn-sm btn-danger" type="submit">Remove</button></form></td>
 				</tr>
 			</c:forEach>
 			

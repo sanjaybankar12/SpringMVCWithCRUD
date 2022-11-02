@@ -48,6 +48,17 @@ public class UserController {
 		return mv;
 	}
 	
+	@PostMapping(value ="/delete")
+	public ModelAndView deleteUser(Integer userId) {
+		
+		this.userService.deleteUser(userId);
+		List<UserEntity> users = this.userService.getUsers();
+
+		ModelAndView mv = new ModelAndView("user");
+		mv.addObject("users",users);
+		return mv;
+	}
+	
 	@ResponseBody
 	@GetMapping(value = "/all",produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<UserEntity> getUsersForRest() {
